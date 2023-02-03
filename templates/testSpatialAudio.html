@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row" style="margin-top: 50px">
+		    <div class="col-lg-4" align="center">
+		    	<h4>Move cursor around the circle to change the sound position</h4>
+		    	<svg id="svg" width="300" height="200">
+				  <rect id="boudingRect" width="300" height="200" style="fill:none;stroke-width:3;stroke:rgb(0,0,0)" />
+				  <circle cx="150" cy="100" r="10" stroke="black" stroke-width="3" fill="none" />
+				</svg>
+		    	
+		    </div>
+		</div>
+		<div class="row">
+			<button id="play">Play</button>
+	    	<button id="pause">Pause</button>
+			
+		</div>
+		    
+		    <!-- <div class="col-lg-4" align="center">
+		    	<h4>Spatial sound measures</h4>
+		    	<table>
+		    		<tbody id="tableBody"></tbody>
+		    	</table>
+		    </div> -->
+		    <!-- <div class="col-lg-4" align="center">
+		    	<h4> Spatial sound measures</h4>
+		    	<table>
+		    		<tbody id="tableBody"></tbody>
+		    	</table>
+		    </div> -->
+	</div>
+	
+	<!-- Load js -->
+	<script type = "text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+	<script type = "text/javascript" src="{{ url_for('static', filename='js/howler.js')}}"></script>
+	<!-- <script src="./js/jquery-3.4.1.min.js"></script> -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!-- <script src="./js/d3.v4.min.js"></script> -->
+	
+	<!-- <script src="./js/howler.js"></script> -->
+	<!-- <script src="./js/vizs.js"></script> -->
+	<script type="text/javascript">
+		measures = {"vol":1,"stereo":0,"posX":0,"posY":0,"posZ":-0.5,"orientX":0,"orientY":0,"orientZ":0}
+		// for(var name in measures){
+		// 	// $("#tableBody").append("<tr><td>"+name+"</td><td id='"+name+"Value'>"+measures[name]+"</td></tr>")
+		// 	$("#tableBody").append("<tr><td>"+name+"</td><td><input type='text' class='measureValues'"+ 
+		// 		"id='"+name+"' value='"+measures[name]+"'></td></tr>")
+		// }
+	
+		// var audio = "./sounds/rain.wav"
+		var sound = new Howl({
+		  src: ["{{ url_for('static', filename='sounds/tick.wav')}}"],
+		  volume: 1,
+		  loop: true,
+		  stereo: 0,
+		  pos: [measures["posX"],measures["posY"],measures["posZ"]]
+		  // orientation: [measures["orientX"],measures["orientY"],measures["orientZ"]]
+		});
+
+		$("#play").on("click",function(){
+			sound.play();	
+		})
+		$("#pause").on("click",function(){
+			sound.pause();	
+		})
+
+		// setInterval(printValues, 3000);
+		// function printValues(){
+		// 	console.log("updated")
+			
+			
+		// 	// print current values
+		// 	// $("#"+measure+"Value").html(sound.volume())
+		// 	// $("#"+measure+"Value").html(sound.stereo())
+		// 	// $("#"+measure+"Value").html(sound.pos())
+		// 	// $("#"+measure+"Value").html(sound.orientation())
+	
+		// }
+
+		$(".measureValues").on("change",function(){
+
+			name = $(this).attr("id")
+			measures[name] = parseFloat($(this).val())
+			// console.log(measures)
+			sound.volume(measures['vol'])
+			sound.stereo(measures['stereo'])
+			sound.pos(measures["posX"],measures["posY"],measures["posZ"])
+			sound.orientation(measures["orientX"],measures["orientY"],measures["orientZ"])
+			// console.log(sound.stereo())
+			// console.log(sound.pos())
+			// window[measure]
+		})
+
+		$("#svg").on("mousemove",function(e){
+			// console.log(e.offsetX,e.offsetY)
+			x = (e.offsetX - 150)/300
+			y = -(e.offsetY - 100)/200
+			changePannerPosition(x,y)
+
+		})
+		function changePannerPosition(x,y){
+			sound.pos(x,y,-0.5)
+
+		}
+		
+	</script>
+</body>
+
+

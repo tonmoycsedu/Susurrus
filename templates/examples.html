@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+		crossorigin="anonymous"
+	>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/create_sound.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/semantic2.4/semantic.min.css') }}">
+</head>
+
+<body>
+	<div class="container-fluid">
+        <!-- <div class="row heading">
+            <h2 class="title">Ambient-Sonic</h2>
+        </div> -->
+        
+        <div class="row" style="margin-top: 50px;">
+          <div class="col-lg-4">
+            <p style="color: red;">The visualizations you will see here are included for demonstration purpose only. In the user study, the visualizations were hidden. Please use Google Chrome and headphones for best results.</p>
+            <!-- <p> After selecting a sound from the list below, </p> -->
+            <h1>Click on an item below to select a sonification. After that, press the <b>SPACE</b> key to play or stop the sonification.</h1>
+            <ul>
+              <li style="margin-top: 10px;">
+                  <a href="#" class="header" chart_id="17">Ambient-Sonic: Bar Chart</a>
+              </li>
+              <!-- <hr> -->
+              <li style="margin-top: 10px;">
+                <a href="#" class="header" chart_id="40">Ambient-Sonic: Line Chart</a>
+              </li>
+              <!-- <hr> -->
+              <li style="margin-top: 10px;">
+                <a href="#" class="header" chart_id="41">Ambient-Sonic: Multi Line Chart</a>
+              </li>
+              <!-- <hr> -->
+              <li style="margin-top: 10px;">
+                <a href="#" class="header" chart_id="29">Ambient-Sonic: Scatter Plot</a>
+              </li>
+              <!-- <hr> -->
+              <li style="margin-top: 10px;">
+                <a href="#" class="header" chart_id="8">Highcharts: Bar Chart</a>
+              </li>
+              <!-- <hr> -->
+              <li style="margin-top: 10px;">
+                <a href="#" class="header" chart_id="11">Highcharts: Line Chart</a>
+              </li>
+              <!-- <hr> -->
+              <li style="margin-top: 10px;">
+                <a href="#" class="header" chart_id="12">Highcharts: Multi Line Chart</a>
+              </li>
+              <!-- <hr> -->
+              <!-- <div class="item">
+                <div class="content">
+                  <a class="header" chart_id="21">Ambient-Sonic: Line Chart</a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="content">
+                  <a class="header" chart_id="22">Ambient-Sonic: Multi Line Chart</a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="content">
+                  <a class="header" chart_id="29">Ambient-Sonic: Scatter Plot</a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="content">
+                  <a class="header" chart_id="8">Highcharts: Bar Chart</a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="content">
+                  <a class="header" chart_id="11">Highcharts: Line Chart</a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="content">
+                  <a class="header" chart_id="12">Highcharts: Multi Line Chart</a>
+                </div>
+              </div> -->
+            </ul>
+            <h1>Study Materials</h1>
+            <a href="{{url_for('study_materials')}}">Click here</a>
+            <!-- <h1>Description</h1>
+            <p id="desc">To play or stop a sound, please click on the <b>play/pause button.</b></p>
+            <p id="desc1">Press <b>UP ARROW</b> to increase the speed of the sound.</p>
+            <p id="desc2">Press <b>DOWN ARROW</b> to decrease the speed of the sound.</p>
+            <p id="desc3">Press keys <b>between 1 to 9</b> to select a single sound source from a mix of natural sounds.</p>
+            <br>
+            <h2 id="task">Example: Comparing scores for two students (bar chart)</h2>
+            <button class="btn btn-outline-success" id="playButton1">Play/Stop</button>
+            <br>
+            <h2 id="task">Example: Comparing scores for three students (bar chart)</h2>
+            <button class="btn btn-outline-success" id="playButton2">Play/Stop</button>
+            <br>
+            <h2 id="task">Example: Understanding trend of a stock price (line chart)</h2>
+            <button class="btn btn-outline-success" id="playButton3">Play/Stop</button>
+            <br>
+            <h2 id="task">Example: Comparing trends for two stocks (line chart)</h2>
+            <button class="btn btn-outline-success" id="playButton4">Play/Stop</button>
+            <br>
+            <h2 id="task">Example: Identify points around the head (scatter plot)</h2>
+            <button class="btn btn-outline-success" id="playButton5">Play/Stop</button> -->
+          </div>
+          <!-- <select id="select_task"><option value="-1">Select</option></select> -->
+          <div class="col-lg-2"></div>
+          <div id="chart_viz" class="col-lg-4"> 
+              <!-- <button id="playpausebar" class="ui mini blue icon button"> Play and Pause</button>  -->
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-lg-6"></div>
+          <div id="desc" class="col-lg-6" style="display: none;">
+            <h1>Interaction</h1>
+            <p>Press the <b>SPACE key</b> to play or stop a sound.</p>
+            <p>Press <b>UP ARROW</b> to increase the speed of the sound.</p>
+            <p>Press <b>DOWN ARROW</b> to decrease the speed of the sound.</p>
+            <p>Press keys <b>between 1 to 9</b> to select a single sound source from a mix of natural sounds.<b> Not available for Highcharts.</b></p>
+            <p>Press <b>ESC</b> to reset selection.<b> Not available for Highcharts.</b></p>
+            <p> Press <b>m</b> for meta data.</p>
+            
+            <br>
+          </div>
+
+        </div>
+        
+	</div>
+
+	<script src="{{ url_for('static', filename='vendor/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/semantic2.4/semantic.min.js')}}"></script>
+	<!-- <script src="{{ url_for('static', filename='vendor/d3.v4.min.js') }}"></script> -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/sonification.js"></script>
+	  <script src="{{ url_for('static', filename='vendor/howler.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/examples/config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/examples/player.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/examples/single_source.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/examples/bar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/examples/scatter.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/examples/line.js') }}"></script>
+
+
+    <script src="{{ url_for('static', filename='js/examples/highchart-bar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/examples/highchart-line.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/examples/main.js') }}"></script>
+
+  <script>
+    let player = new Player();
+
+    CONFIG['sounds'].forEach(sound => {
+      console.log(sound)
+      let sound_loc = "sounds/create_sound/"+sound
+      player.add_sound(sound,new Howl({
+            src: ["{{ url_for('static', filename='')}}" + sound_loc],
+            volume:0.5,
+            loop:false,
+        })
+      )
+    });
+    player.set_volume(CONFIG["beep_sound"], 10);
+    player.set_volume(CONFIG['key'],20)   
+  </script>
+</body>

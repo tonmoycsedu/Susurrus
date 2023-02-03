@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+		crossorigin="anonymous"
+	>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/create_sound.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/semantic2.4/semantic.min.css') }}">
+</head>
+
+<body>
+	<div class="container-fluid">
+        <!-- <div class="row heading">
+            <h2 class="title">Ambient-Sonic</h2>
+        </div> -->
+        <a href="{{url_for('examples')}}">Back</a>
+        <div class="row" style="margin-top: 50px;">
+          <div class="col-lg-6">
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><u><span style="font-size:27px;font-family: Arial, sans-serif;">Baseline</span></u></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>&nbsp;</p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>1. <span style="font-size:15px;">Which student has the highest score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">2. Which student has the lowest score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">3. Between student 2 and 3, which student has the higher score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">4. Between student 1 and 5, which student has the lower score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">5. Between student 2 and 3, which student has the higher score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">6. Between student 1 and 4, which student has the lower score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">7. What is the overall trend for the stock price?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. The price went down and up continuously.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b. The Price increased at the beginning, then decreased significantly, with an increase at the end.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c. The price increased steadily at the beginning, and then decreased significantly.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; d. The price went down at the beginning and kept increasing after that.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">8. Based on the audio, what will be your forecast for the stock in near future?&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. It will increase.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:15px;">b. It will decrease.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:15px;">c. It will keep a steady high price.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; d. It will keep a steady low price.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">9. Did the price of any of the stocks face a major drop?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">10. Which of the following is true?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. Initially, both stocks had similar prices.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:15px;">b. At the end, both stocks had similar prices.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c. The prices for both stocks remained similar in the full sound.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; d. The prices were never similar.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">11. At the beginning, which stock (sound) had a higher value?&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. Piano</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b. Organ</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">12. At the end, which stock (sound) had a lower value?&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. Piano</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b. Organ</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><u><span style="font-size:27px;font-family: Arial, sans-serif;">Ambient-Sonic</span></u></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>&nbsp;</p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>1. <span style="font-size:15px;">Which sound represents the higher score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. bird song</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b. raven</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c. robin</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>2. <span style="font-size:15px;">Which sound represents the higher score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. bird song</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b. raven</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c. robin</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">3. Which sound represents the highest score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. bird song</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b. raven</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c. robin</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; d. dove</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">4. Between dove and raven, which sound represents the higher score?&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>5. <span style="font-size:15px;">Between bird song and woodpecker, which sound represents the higher score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>&nbsp;</p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">6. Between raven and bird song, which sound represents the lower score?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>7. <span style="font-size:15px;">What is the overall trend for the stock price?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:15px;">a. The price went down at the beginning and kept decreasing after that.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b. The Price increased a bit, then decreased significantly, with an increase at the end.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c. The audio represented a steady increase in stock price.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; d. The price went down and up continuously.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">8. Based on the audio, what will be your forecast for the stock in near future?&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. It will increase.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:15px;">b. It will decrease.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size:15px;">c. It will keep a steady high price.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; d. It will keep a steady low price.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">9. Which of the following is true?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. at the end, both stocks had similar prices.</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b. At the end, stock represented by the raven sound had higher price than the stock represented by the dove sound.&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c. The prices for both stocks remained similar in the full sound</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; d. At the beginning, stock represented by dove sound had higher price than the stock represented by the raven sound.&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'>&nbsp;</p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">10. At the beginning, stock represented by dove sound had higher price than the stock represented by the raven sound.&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">11.&nbsp;</span><span style="font-size:15px;">can you tell which side of your ear the crickets (1) are buzzing?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">&nbsp;</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:15px;">12.&nbsp;</span><span style="font-size:13px;font-family: Arial, sans-serif;">Which pair of points have the shorter average distance between them?</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:13px;font-family: Arial, sans-serif;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a. dove and woodpecker</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:13px;font-family: Arial, sans-serif;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b. woodpecker and raven</span></p>
+            <p style='margin: 0in;font-family: "Times New Roman", serif;'><span style="font-size:13px;font-family: Arial, sans-serif;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c. raven and dove</span></p>
+
+          </div>
+          <div class="col-lg-6">
+            <p style='margin: 0.2in;font-family: "Times New Roman", serif;'><u><span style="font-size:27px;font-family: Arial, sans-serif;">Subjective Measures</span></u></p>
+              <p>1. On a scale of 1 to 5, how clearly can you recognize different stocks or students? (1 = not at all, 5 = very clearly)</p>
+              <p>2. Enjoyment: I think I enjoyed listening to the data with the audio. (1 = Strongly Disagree, 5 = Strongly Agree)</p>
+              <p>3. Mental Demand: I think answering the questions were mentally demanding for me. (1 = Strongly Disagree, 5 = Strongly Agree)</p>
+              <p>4. Easiness/Effort: I think it was easy for me to answer the questions from the audio. (1 = Strongly Disagree, 5 = Strongly Agree)</p>
+              <p>5. Frustration: On a scale of 1 to 5, how frustrated were you while answering the questions? (1 = not at all, 5 = very frustrated)</p>
+          </div>
+        </div>
+        
+	</div>
+
+	<script src="{{ url_for('static', filename='vendor/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/semantic2.4/semantic.min.js')}}"></script>
+	<!-- <script src="{{ url_for('static', filename='vendor/d3.v4.min.js') }}"></script> -->
+</body>

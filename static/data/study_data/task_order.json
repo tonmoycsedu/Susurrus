@@ -1,0 +1,299 @@
+{
+    "1": [
+        {
+            "name":"group0",
+            "menu_title": "Instructions",
+            "options": [0] 
+        },
+        {
+            "name": "group1",
+            "menu_title": "Let's get familiar with natural sounds",
+            "options": [1, 2, 3, 4, 5, 6, 44, 45]
+        },
+        {
+            "name": "group2",
+            "menu_title": "Comparing students' scores using natural sounds",
+            "options": [18, 19, 17]
+        },
+        {
+            "name": "group3",
+            "menu_title": "Understanding stock prices using natural sounds",
+            "options": [22, 23, 25]
+        },
+        {
+            "name": "group4",
+            "menu_title": "Understanding 2D datapoints using natural sounds",
+            "options": [26, 27, 28, 29]
+        },
+        {
+            "name": "group5",
+            "menu_title": "End of first part of the story",
+            "options": [50]
+        },
+        {
+            "name": "group6",
+            "menu_title": "Comparing scores of students using musical notes",
+            "options": [7, 8, 9]
+        },
+        {
+            "name": "group7",
+            "menu_title": "Understanding stock prices using musical notes",
+            "options": [11, 12, 13, 14]
+        },
+        {
+            "name": "group8",
+            "menu_title": "End of the second part",
+            "options": [75]
+        }
+    ],
+    "2": [
+        {
+            "name": "group0",
+            "menu_title": "Instructions",
+            "options": [
+                0
+            ]
+        },
+        {
+            "name": "group6",
+            "menu_title": "Comparing students' scores using musical notes",
+            "options": [
+                7,
+                8,
+                9
+            ]
+        },
+        {
+            "name": "group7",
+            "menu_title": "Understanding stock prices using musical notes",
+            "options": [
+                11,
+                12,
+                13,
+                14
+            ]
+        },
+        {
+            "name": "group5",
+            "menu_title": "End of first part of the story",
+            "options": [
+                50
+            ]
+        },
+        {
+            "name": "group1",
+            "menu_title": "Let's get familiar with natural sounds",
+            "options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "name": "group2",
+            "menu_title": "Compare scores of students using natural sounds",
+            "options": [
+                18,
+                19,
+                17,
+                20
+            ]
+        },
+        {
+            "name": "group3",
+            "menu_title": "Understand stock prices using natural sounds",
+            "options": [
+                21,
+                22,
+                23,
+                25
+            ]
+        },
+        {
+            "name": "group4",
+            "menu_title": "Understand 2D datapoints using natural sounds",
+            "options": [
+                26,
+                27,
+                28,
+                29
+            ]
+        },
+        {
+            "name": "group8",
+            "menu_title": "End of the second part",
+            "options": [
+                75
+            ]
+        }
+    ],
+    "3": [
+        {
+            "name": "group0",
+            "menu_title": "Read Instructions",
+            "options": [
+                0
+            ]
+        },
+        {
+            "name": "group1",
+            "menu_title": "Understanding natural sounds",
+            "options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "name": "group3",
+            "menu_title": "Understand stock prices using natural sounds",
+            "options": [
+                21,
+                22,
+                23,
+                25
+            ]
+        },
+        {
+            "name": "group2",
+            "menu_title": "Compare scores of students using natural sounds",
+            "options": [
+                18,
+                19,
+                17,
+                20
+            ]
+        },
+        {
+            "name": "group4",
+            "menu_title": "Understand 2D datapoints using natural sounds",
+            "options": [
+                26,
+                27,
+                28,
+                29
+            ]
+        },
+        {
+            "name": "group5",
+            "menu_title": "End of first part of the story",
+            "options": [
+                50
+            ]
+        },
+        {
+            "name": "group7",
+            "menu_title": "Understand stock prices using musical notes",
+            "options": [
+                11,
+                12,
+                13,
+                14
+            ]
+        },
+        {
+            "name": "group6",
+            "menu_title": "Compare scores of students using musical notes",
+            "options": [
+                7,
+                8,
+                9
+            ]
+        },
+        {
+            "name": "group8",
+            "menu_title": "End of the second part",
+            "options": [
+                75
+            ]
+        }
+    ],
+    "4": [
+        {
+            "name": "group0",
+            "menu_title": "Read Instructions",
+            "options": [
+                0
+            ]
+        },
+        {
+            "name": "group7",
+            "menu_title": "Understand stock prices using musical notes",
+            "options": [
+                11,
+                12,
+                13,
+                14
+            ]
+        },
+        {
+            "name": "group6",
+            "menu_title": "Compare scores of students using musical notes",
+            "options": [
+                7,
+                8,
+                9
+            ]
+        },
+        {
+            "name": "group5",
+            "menu_title": "End of first part of the story",
+            "options": [
+                50
+            ]
+        },
+        {
+            "name": "group1",
+            "menu_title": "Understanding natural sounds",
+            "options": [
+                1,
+                3,
+                4,
+                5,
+                6,
+                44,
+                45
+            ]
+        },
+        {
+            "name": "group3",
+            "menu_title": "Understand stock prices using natural sounds",
+            "options": [
+                23,
+                25
+            ]
+        },
+        {
+            "name": "group2",
+            "menu_title": "Compare scores of students using natural sounds",
+            "options": [
+                18,
+                19,
+                17
+            ]
+        },
+        {
+            "name": "group4",
+            "menu_title": "Understand 2D datapoints using natural sounds",
+            "options": [
+                26,
+                27,
+                28,
+                29
+            ]
+        },
+        {
+            "name": "group8",
+            "menu_title": "End of the second part",
+            "options": [
+                75
+            ]
+        }
+    ]
+}

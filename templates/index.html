@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+
+</head>
+
+<body>
+	<div class="container-fluid">
+  	<div class="d-flex justify-content-center align-items-center">
+        <div class="col-lg-2" align="center">
+          <a href="#"><button id="previous" type="button" class="btn btn-outline-primary">Previous</button></a>
+        </div>
+  			<div class="col-lg-6" id="center_div" align="center">
+            <h4 id="chart_title"></h4>
+            <button class="btn btn-outline-success" id="playButton">Play</button>
+            <button class="btn btn-outline-danger pause" id="pauseButton">Stop</button>
+
+            <label id="interval_label" for="interval">Interval:</label><input id="interval" value="10" type="text" name="interval">
+      			<div id="chart_div1" style="text-align: left"></div>
+      			<div id="chart_div" style="text-align: left"></div>
+            <a id="save_drawing"><button class="btn btn-outline-primary">Save Drawing</button></a>
+            <button id="erase_drawing" class="btn btn-outline-primary">Erase Drawing</button>
+            <!-- <a href="" download>clcik me!</a> -->
+
+            <!-- <label id="time_label">Time remaining:</label><span id="time_value"></span> -->
+            <!-- <audio id="player" src="{{url_for('static', filename='sounds/study1/sound0.mp3')}}" controls>
+              <p>Your browser doesn't support HTML5 video.</p>
+            </audio> -->
+            <!-- <a href="" download>clcik me!</a> -->
+    		</div>
+        <div class="col-lg-2" align="center">
+          <a href="#"><button id="next" type="button" class="btn btn-outline-primary">Next</button></a>
+        </div>
+
+		</div>
+	</div>
+
+	<script src="{{ url_for('static', filename='vendor/jquery-3.4.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/d3.v4.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/howler.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/event.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/vizs.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/canvas.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/QA.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/study1.js') }}"></script>
+
+  	<script type="text/javascript">
+
+      /* define all sounds */
+      var cricket = new Howl({
+        src: ["{{ url_for('static', filename='sounds/single_cricket.mp3')}}"],
+        volume:0.1
+      })
+
+      var tick = new Howl({
+        src: ["{{ url_for('static', filename='sounds/tick.wav')}}"],
+        // loop: true
+      })
+
+      var beep = new Howl({
+         src: ["{{ url_for('static', filename='sounds/beep.mp3')}}"],
+         volume:0.05,
+         sprite: {
+            half: [0, 300],
+          }
+      })
+
+      var sprites = {full:[0,clipTime*1000]}
+
+      var i = 0;
+      while(i< clipTime){
+        sprites["d"+(i/spriteTime).toString()] = [i*1000,spriteTime*1000]
+        i += spriteTime
+      }
+      console.log(sprites)
+  		var line_audios = [];
+
+      line_audios.push(new Howl({
+		    	src: ["{{ url_for('static', filename='sounds/rain2.mp3')}}"],
+          // loop:true
+          // sprite: sprites
+			}));
+      line_audios.push(new Howl({
+          src: ["{{ url_for('static', filename='sounds/single_cricket.mp3')}}"],
+          loop: true
+          // sprite: sprites
+      }));
+      // line_audios.push(new Howl({
+      //     src: ["{{ url_for('static', filename='sounds/cricket.wav')}}"],
+      //     loop: true,
+      //     sprite: sprites
+      // }));
+      line_audios.push(new Howl({
+          src: ["{{ url_for('static', filename='sounds/birds_edited.mp3')}}"],
+          loop: true
+      }));
+
+      var rain = new Howl({
+          src: ["{{ url_for('static', filename='sounds/rain2.mp3')}}"]
+      });
+
+  		var sound_names = ['sounds/cricket.wav','sounds/birds.mp3','sounds/rain2.mp3']
+  		// var sound_pos = []
+  		var sounds = [];
+		for(i=0;i<sound_names.length;i++){
+      // console.log(barAudioLength(i))
+		  sounds.push ( new Howl({
+        src: ["{{ url_for('static', filename='')}}" + sound_names[i]],
+        sprite: {clip:barAudioLength(i)}
+      }));
+
+		}
+
+    function barAudioLength(i) {
+      data = cat_data.map(function(d){return d.value})
+      min = d3.min(data)
+      max = d3.max(data)
+      console.log(min,max)
+      d = data[i]
+      // val = (+d - min)/(max-min)
+      // dur.push(((+d - 0)/120)*100)
+      if(i==0) return [0,d*1000]
+      else return [1000,d*1000]
+    }
+		// var crickets = []
+		// var cricket_sounds = ['sounds/single_cricket.mp3','sounds/single_cricket1.mp3']
+  // 		for(i=0;i<cricket_sounds.length;i++){
+  // 			crickets.push(new Howl({
+		//     	src: ["{{ url_for('static', filename='')}}" + cricket_sounds[i]],
+		//     	volume:0.5
+		// 	}))
+  // 		}
+  	</script>
+</body>

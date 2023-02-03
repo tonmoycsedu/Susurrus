@@ -1,0 +1,48 @@
+.site_color{
+	stroke:#17a2b8;
+	/*fill:#17a2b8;*/
+}
+
+p.large{
+  font-size: 22px;
+}
+label.large{
+  font-size: 22px;
+}
+button.large{
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+ul.large{
+  font-size: 18px;
+}
+label.medium{
+  font-size: 18px;
+  margin-right: 10px;
+}
+.control_opt{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+
+#custom-seekbar
+{  
+  cursor: pointer;
+  height: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  outline: thin solid orange;
+  overflow: hidden;
+  position: relative;
+  width: 400px;
+}
+#custom-seekbar span
+{
+  background-color: orange;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 0px;
+}

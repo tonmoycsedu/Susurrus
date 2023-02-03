@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+		crossorigin="anonymous"
+	>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/semantic2.4/semantic.min.css') }}">
+</head>
+
+<body>
+	<div class="container-fluid">
+        <!-- <div class="row heading">
+            <h2 class="title">Ambient-Sonic</h2>
+        </div> -->
+
+        <div class="row" style="margin-top: 50px;">
+          <div class="col-lg-4">
+            <h1>Task list. Please complete the tasks in order.</h1>
+            <ul id="control_list" class="large"></ul>
+          </div>
+          <div id="main_div" style="display: none;" class="col-lg-8">
+            <h1 tabindex="-1" id="task">Welcome to Data Sonification Study. Please read the instructions below.</h1>
+            <p id="task_desc" class="large"></p>
+            <!-- <h1 tabindex="-1" id="instruction">Welcome to Data Sonification Study. Please read below.</h1>
+            <p id="desc" class="large"></p> -->
+            <h1>Control Buttons</h1>
+            <button id="play_control" class="large sound_button">Play or Pause</button>
+            <button id="decrease_control" class="large sound_button">Decrease Speed</button>
+            <button id="increase_control" class="large sound_button">Increase Speed</button>
+            <br>
+            <!-- <label class="large">Select a data source:</label>
+            <button id="0_control" class="large sound_button select_button">1</button>
+            <button id="1_control" class="large sound_button select_button">2</button>
+            <button id="2_control" class="large sound_button select_button">3</button>
+            <button id="3_control" class="large sound_button select_button">4</button>
+            <button id="4_control" class="large sound_button select_button">5</button>
+            <br>
+            <button id="reset_control" class="large sound_button">Unselect all sound source</button>
+            <br> -->
+            <button id="prev" class="large bottom_margin">Previous</button>
+            <button id="next" class="large bottom_margin">Next</button>
+            <br>
+            <button id="menu_control" class="large bottom_margin">Go to Task List</button>
+            <!-- <p class="large">Press M to move to the current menu.</p>
+            <p class="large">Press P to play or pause sound.</p> -->
+            <!-- <p class="large">Press LEFT and RIGHT ARROW for decreasing and increasing sound speed.</p> -->
+            <!-- <p class="large">Press 1 to 9 for selecting a data source.</p> -->
+            <!-- <p class="large">Press ESC for resetting any selection.</p> -->
+
+            
+            <div id="QA"></div>
+            
+          </div>
+          <!-- <select id="select_task"><option value="-1">Select</option></select> -->
+          <div id="chart_viz" class="row" style="display: none;"> 
+              <!-- <button id="playpausebar" class="ui mini blue icon button"> Play and Pause</button>  -->
+          </div>
+
+        </div>
+        
+	</div>
+
+	<script src="{{ url_for('static', filename='vendor/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/semantic2.4/semantic.min.js')}}"></script>
+	<!-- <script src="{{ url_for('static', filename='vendor/d3.v4.min.js') }}"></script> -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/sonification.js"></script>
+	  <script src="{{ url_for('static', filename='vendor/howler.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/study/config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/study/player.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/study/single_source.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/study/bar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/study/scatter.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/study/line.js') }}"></script>
+
+
+    <script src="{{ url_for('static', filename='js/study/highchart-bar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/study/highchart-line.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/study/main.js') }}"></script>
+
+  <script>
+    let player = new Player();
+
+    CONFIG['sounds'].forEach(sound => {
+      console.log(sound)
+      let sound_loc = "sounds/create_sound_normalized/"+sound
+      player.add_sound(sound,new Howl({
+            src: ["{{ url_for('static', filename='')}}" + sound_loc],
+            volume:0.5,
+            loop:false,
+        })
+      )
+    });
+    player.set_volume(CONFIG["beep_sound"], 10);
+    player.set_volume(CONFIG['key'],20)  
+    var task_order =  {{task_order| tojson}}
+    var order = {{order|tojson}}
+    console.log(order)
+    // player.install_events()
+  </script>
+</body>

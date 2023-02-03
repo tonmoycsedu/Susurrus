@@ -1,0 +1,22 @@
+var CONFIG = {
+    "chart_type": ["line", "bar", "scatter"],
+    "chart_type_select_id": "chart_type",
+    "sounds": ["forest_ambience.wav", 
+        "distant_woodpecker.wav", "distant_woodpecker_single.wav", 
+        "raven.mp3", 
+        "japanese_raven.wav", "japanese_raven_short.wav", 
+        "single_bird.wav", "single_bird_short.wav", 
+        "cricket_short.wav", 
+        "summer_wind.wav", "beep.mp3", "scanner.wav",
+        "single_line_condition2.mp3", "multi_line_condition2.mp3",
+        "seagull.ogg", "single_seagull.ogg", "interaction.wav", "white_noise.mp3", "short_white_noise.wav",
+        "cat.wav", "robin_long.wav"
+    ],
+    "background": "white_noise.mp3",
+    "scatter_sound": "forest_ambience.wav",
+    "point_sound": "cricket_short.wav",
+    "random_max": 5000,
+    "beep_sound": "beep.mp3",
+    "key": "interaction.wav",
+    "bins":100,
+}

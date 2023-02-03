@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="col-lg-2" align="center">
+          <a href="#"><button id="previous" type="button" class="btn btn-outline-primary">Previous</button></a>
+        </div>
+              <div class="col-lg-6" id="center_div" align="center">
+            <h4 id="chart_title"></h4>
+            <button class="btn btn-outline-success" id="playButton">Play</button>
+            <button class="btn btn-outline-danger pause" id="pauseButton">Stop</button>
+            <button class="btn btn-outline-primary pause" id="rateDecrease">decrease speed</button>
+            <button class="btn btn-outline-primary pause" id="rateIncrease">increase speed</button>
+
+
+
+            <!-- <label id="interval_label" for="interval">Interval:</label><input id="interval" value="10" type="text" name="interval"> -->
+                        <div id="headline" style="text-align: left"></div>
+                        <div id="chart_div" style="text-align: left;">
+                            <video id="single" width="800" height="600" style="display:none">
+                                <source src="{{ url_for('static', filename='images/single-line-chart-video.mp4')}}" type="video/mp4">
+                            </video>
+                            <video id="multi" width="800" height="600" style="display:none">
+                                <source src="{{ url_for('static', filename='images/multi-line-chart-video.mp4')}}" type="video/mp4">
+                            </video>
+                            <video id="bar" width="800" height="600" style="display:none">
+                                <source src="{{ url_for('static', filename='images/bar-chart-video.mp4')}}" type="video/mp4">
+                            </video>
+                            <video id="scatter" width="800" height="600" style="display:none">
+                                <source src="{{ url_for('static', filename='images/scatter-plot-video.mp4')}}" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div id="custom-seekbar">
+                            <span></span>
+                          </div>
+                  <div id="chart_div1" style="text-align: left"></div>
+
+
+
+                        <!-- <button class="btn btn-success" id="submit">Submit</button> -->
+
+            <!-- <a id="save_drawing"><button class="btn btn-outline-primary">Save Drawing</button></a> -->
+            <!-- <button id="erase_drawing" class="btn btn-outline-primary">Erase Drawing</button> -->
+            <!-- <a href="" download>clcik me!</a> -->
+
+            <!-- <label id="time_label">Time remaining:</label><span id="time_value"></span> -->
+            <!-- <audio id="player" src="{{url_for('static', filename='sounds/study1/sound0.mp3')}}" controls>
+              <p>Your browser doesn't support HTML5 video.</p>
+            </audio> -->
+            <!-- <a href="" download>clcik me!</a> -->
+            </div>
+        <div class="col-lg-2" align="center">
+          <a href="#"><button id="next" type="button" class="btn btn-outline-primary">Next</button></a>
+        </div>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='vendor/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/d3.v4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/howler.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/QA.js') }}"></script>
+  <!-- <script src="{{ url_for('static', filename='js/index.js') }}"></script> -->
+  <script src="{{ url_for('static', filename='js/condition2.js') }}"></script>
+
+    <script>
+        /* define all sounds */
+        var single_line = new Howl({
+            src: ["{{ url_for('static', filename='sounds/study1/single-line-chart-audio.mp3')}}"],
+            volume:0.1
+        })
+
+        var beep = new Howl({
+            src: ["{{ url_for('static', filename='sounds/beep.mp3')}}"],
+            volume:0.05,
+            loop: true
+          })
+
+        var multi_line = new Howl({
+            src: ["{{ url_for('static', filename='sounds/study1/multi-line-chart-audio.mp3')}}"],
+            volume:0.1
+        })
+
+        var scatter = new Howl({
+            src: ["{{ url_for('static', filename='sounds/study1/scatter-plot-audio.mp3')}}"],
+            volume:0.1
+        })
+
+        var bar_chart = new Howl({
+            src: ["{{ url_for('static', filename='sounds/study1/bar-chart-audio.mp3')}}"],
+            volume:0.1
+        })
+
+        var single_line_v2 = new Howl({
+            src: ["{{ url_for('static', filename='sounds/study1/single-line-chart-audio-v2-final-2.mp3')}}"],
+            volume:0.3
+        })
+
+        var multi_line_v2 = new Howl({
+            src: ["{{ url_for('static', filename='sounds/study1/multi-line-chart-audio-v2-final.mp3')}}"],
+            volume:0.5
+        })
+
+        var scatter_v2 = new Howl({
+            src: ["{{ url_for('static', filename='sounds/study1/scatter-plot-audio-v2.mp3')}}"],
+            volume:0.5
+        })
+
+        var bar_chart_v2 = new Howl({
+            src: ["{{ url_for('static', filename='sounds/study1/bar-chart-audio-v2.mp3')}}"],
+            volume:0.6
+        })
+    </script>
+
+</body>
