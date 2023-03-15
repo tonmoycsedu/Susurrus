@@ -50,7 +50,7 @@ class Line {
     }
 
     add_create_button () {
-        let html_string = '<button id="create_chart" class="ui mini blue icon button">Create Bar Chart</button>';
+        let html_string = '<button id="create_chart" class="ui mini blue icon button">Create Line Chart</button>';
         $("#"+this.div_id).append(html_string);
 
     }
